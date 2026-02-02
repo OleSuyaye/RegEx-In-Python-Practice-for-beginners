@@ -1,0 +1,6 @@
+import re
+
+text = "I like apples"
+result = re.search("apple", "like", text)
+
+print(result)

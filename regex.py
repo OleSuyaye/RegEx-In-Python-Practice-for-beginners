@@ -52,3 +52,51 @@ def match_beginning (text):
         return "Match Not Found"
     
 print(match_beginning("catholic"))
+
+# Rough Regex learning work. Ignore this!
+
+word = "Python is a powerful programing language"
+results = re.findall(r"\w+\bP", word, re.IGNORECASE)
+print(results)
+
+import re
+
+# Sample text
+text = "Cats climb carefully, chasing curious creatures."
+
+# Pattern to find words starting with 'c' (case-insensitive)
+pattern = r"\bc\w*"  
+# \b → word boundary (start of a word)
+# c → the letter we want the word to start with
+# \w* → zero or more letters/digits after c
+
+# Using re.finditer()
+matches = re.finditer(pattern, text, re.IGNORECASE)
+
+# Loop through the iterator to see results
+for match in matches:
+    print(match.group(), match.start(),"-", match.end())
+
+txt = "The rain in Spain"
+x = re.split("\s", txt)
+print(x)
+
+# Split a string at each space
+txt = "The rain in Spain"
+x = re.split("\s", txt, 1)
+print(x)
+
+# Replace each space with a 9
+txt = "The rain in Spain"
+x = re.sub("\s", "9", txt)
+print(x)
+
+# Replace the first 2 spaces with 9
+txt = "The rain in Spain"
+x = re.sub("\s", "9", txt, 2)
+print(x)
+
+import re
+text1 = ' Python    Exercises '
+print("Original string:",text1)
+print("Without extra spaces:",re.sub(r'\s+', '',text1))
